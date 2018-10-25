@@ -10,8 +10,8 @@ Run test
   > text file
   > EOF
 
-  $ std_encode input_test.txt
-  >>>>>>>>>> START input_test.txt
+  $ std_encode -t input_test.txt
+  >>>>>>>>>> START t input_test.txt
   Some test
   text file
   <<<<<<<<<< END

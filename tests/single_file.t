@@ -7,7 +7,7 @@ Run test
 
   $ cat > input_test.txt <<EOF
   > Some test
-  > >>>>>>>>>> START test.txt
+  > >>>>>>>>>> START t test.txt
   > testing
   > <<<<<<<<<< END
   > something else
