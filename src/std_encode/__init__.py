@@ -1,6 +1,7 @@
 __version__ = '0.1.0'
 
 import fileinput
+import argparse
 
 START_ENCODING = '>>>>>>>>>> START'
 END_ENCODING = '<<<<<<<<<< END'
@@ -32,4 +33,15 @@ def run_se():
     Read and dump a file with the proper format so it
     will be encoded back with se
     '''
+    help_string = 'Encode a file in stdout. Recover it with std_decode'
+    parser = argparse.ArgumentParser(description=help_string)
+    parser.add_argument('file', type=argparse.FileType('r'), help='file')
+
+    args = parser.parse_args()
+    filename = args.file.name
+    print(f'{START_ENCODING} {filename}')
+    for line in args.file:
+        print(line, end='')
+
+    print(f'{END_ENCODING}')
     pass
