@@ -18,7 +18,7 @@ Run test
   > and the coda
   > EOF
 
-  $ cat input_test.txt | $SE
+  $ cat input_test.txt | std_decode
   Some test
   something else
   and the coda

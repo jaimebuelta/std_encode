@@ -13,7 +13,7 @@ Run test
   > something else
   > EOF
 
-  $ cat input_test.txt | $SE
+  $ cat input_test.txt | std_decode
   Some test
   something else
 

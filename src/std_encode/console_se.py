@@ -1,12 +1,10 @@
-__version__ = '0.1.0'
-
 import fileinput
 
 START_ENCODING = '>>>>>>>>>> START'
 END_ENCODING = '<<<<<<<<<< END'
 
 
-def run():
+def run_se():
     '''
     Read from the standard input to filter
     '''
@@ -25,3 +23,7 @@ def run():
             print(line, end='')
         else:
             fp.write(line)
+
+
+if __name__ == '__main__':
+    run_se()

@@ -1,4 +1,4 @@
-from se import __version__
+from std_encode import __version__
 
 
 def test_version():

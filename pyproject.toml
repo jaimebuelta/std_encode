@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "se"
+name = "std_encode"
 version = "0.1.0"
 description = ""
 authors = ["Jaime Buelta <jaime.buelta@gmail.com>"]
@@ -12,7 +12,7 @@ pytest-cram = "^0.2.0"
 pytest = "^3.0"
 
 [tool.poetry.scripts]
-se = 'se:run'
+std_decode = 'std_encode:run_sd'
 
 [build-system]
 requires = ["poetry>=0.12"]

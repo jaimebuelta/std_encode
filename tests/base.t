@@ -4,5 +4,5 @@ Setup
 
 Run test
 
-  $ echo 'test line' | se
+  $ echo 'test line' | std_decode
   test line
