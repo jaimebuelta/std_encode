@@ -15,6 +15,7 @@ Run test
 
   $ cat input_test.txt | std_decode
   Some test
+  ######### DECODED FILE test.txt
   something else
 
   $ cat test.txt

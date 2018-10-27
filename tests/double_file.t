@@ -20,7 +20,9 @@ Run test
 
   $ cat input_test.txt | std_decode
   Some test
+  ######### DECODED FILE test.txt
   something else
+  ######### DECODED FILE test2.txt
   and the coda
 
   $ cat test.txt

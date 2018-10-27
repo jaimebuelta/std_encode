@@ -11,6 +11,7 @@ Run test
   > EOF
 
   $ std_encode -t input_test.txt | std_decode
+  ######### DECODED FILE input_test.txt
 
   $ cat input_test.txt
   Some test

@@ -29,6 +29,7 @@ def run_sd():
 
             display = False
         elif line.startswith(END_ENCODING):
+            print('######### DECODED FILE {}'.format(filename))
             display = True
             fp.close()
         elif display:

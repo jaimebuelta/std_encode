@@ -18,6 +18,7 @@ The encoded text can be then decoded and saved with `std_decode`
 
 ```
 $ std_encode -t input_test.txt | std_decode
+######### DECODED FILE input_test.txt
 $ cat input_test.txt
 Some test
 text file
@@ -25,6 +26,7 @@ text file
 
 ## Features
 
+- A log shows that a file has been decoded
 - Text and binary files are supported (binary are default).
 - `std_decode` is capable of decoding more than one file in the same stream
 - Any line in the stream that's not part of a file will be replicated in the standard output.
