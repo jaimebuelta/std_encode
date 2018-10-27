@@ -1,5 +1,7 @@
 # std_encode
 
+[![Build Status](https://travis-ci.org/jaimebuelta/std_encode.svg?branch=master)](https://travis-ci.org/jaimebuelta/std_encode)
+
 Encode and decode files through standard input/output.
 
 ## Usage
