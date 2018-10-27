@@ -10,7 +10,8 @@ matrix:
       dist: xenial
       sudo: true
 before_install:
-  - curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
-install: 
+  - pip install poetry
+install:
+  - poetry install
   - pip install tox-travis
 script: tox
