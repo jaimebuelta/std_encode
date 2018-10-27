@@ -1,7 +1,8 @@
 [tool.poetry]
 name = "std_encode"
 version = "0.1.0"
-description = ""
+description = "Encode and decode files through the standard input/output"
+home-page = "https://github.com/jaimebuelta/std_encode"
 authors = ["Jaime Buelta <jaime.buelta@gmail.com>"]
 
 [tool.poetry.dependencies]
