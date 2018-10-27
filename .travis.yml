@@ -16,7 +16,7 @@ install:
   - pip install tox-travis
   - poetry build
   # Extract the setup.py file
-  - tar -xf  dist/*.gz  */setup.py && mv */setup.py .
+  - tar -xf  dist/*.gz  && mv */setup.py .
 script: tox
 deploy:
   provider: pypi
