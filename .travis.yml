@@ -1,30 +1,30 @@
 language: python
 python:
-    - "2.7"
-    - "3.5"
-    - "3.6"
+- '2.7'
+- '3.5'
+- '3.6'
 matrix:
   include:
-    # We need a newer Ubuntu than default for Python 3.7
-    - python: 3.7
-      dist: xenial
-      sudo: true
+  - python: 3.7
+    dist: xenial
+    sudo: true
 before_install:
-  - pip install poetry
+- pip install poetry
 install:
-  - poetry install -v
-  - pip install tox-travis
-  - poetry build
-  # Extract the setup.py file
-  - tar -xf  dist/*.gz  && mv */setup.py .
-script: tox
+- poetry install -v
+- pip install tox-travis
+script:
+- tox
+- poetry build
+# Extract the setup.py file
+- tar -xf  dist/*.gz  && mv */setup.py .
 deploy:
   provider: pypi
   user: jaimebuelta
   password:
-    secure: H0ZVmNzwxD18mB5kglqnUHhejqqHHRoRLvWwpW8/oSIrU7JspzGTJthxQGk8ZlX/CZCQGSySPDF3IGxaal2CzQRADC6NO/tSr4E3dSOyQ44k7ZXttwylNKLKVfoDsAcru73hWbG5DHLWiVJ8PGyjUHw5bwDQjl8Dz96QzCUBfmrNE/bmRLF2Uq5ey6cjA4L2GuGeKneZlI7pVQU2WMLzcf3BGKJCpn/2nEkP4YFGbMITrboRknYlutyt7EAHiSKaU2bT56ZP0VSzlI8IL4K89w4EA+G1vVtefWIFKRkQPR69gHVMOGqp7YhSw7NrpkNc5KH4xmeht8xbyplT8Cx1315IBA1G/zcfEwTalRf/ABdrLWqo6xDi2w+66pC5ILDJezV1iCzF+S0b6j5nGX599CINMQnjVYFvUT7NpHbMpewV9kY3owsswRzglvgygF+7UQObaphgE24714fzrN07r7ISwbHtrmlcPlzfaGulHgyj1ZeuHFdmjI5KOfRN635WBoN00Zgbakd07ER91daTLiQ4nS2QKfhyQWOoLMHFZSSmH4KOmwPkeqgt5gzIgCA50wUcGgMB7TGoZAkCx0tcqPFESr6nxmIQq3ZB79kOs3B6IS2lIqFDP/uhUbFCB2sc9fwjF+PKLkpE+HQIx1d+uJ44IcgnoND/LQ+45wSRFP0=
+    secure: jNRvdQ9zgAfFZP2bZdHk5S+s6OKKxrNKh1z9bx0EK0xjZlnYUVkW+aCr18DbgjHVfM4T3hLKRsoYIMRwQrY82wjdkycSXPX4us55plto0tYAqiODcTN2ZO2xuKf6tbh/IK4gaU9LnKtf8l9AVq0G4dlsYLsZNlPFaJzc4NBWTmKt0Jp91JFcAC2oCO7ofmqee/+nx4gOkxxcld9KQwWQ2rWDbduo6qFxedl4PGEgUx9M9dnqyy55j2Hzpkuycaom2pw4DZ89dt4c+NILoGkiB5StUpO3m0Wk77ossBdeR7tOlhfgihMUD61CZ8EY7Y6osZWi12+iGeeaqdB4vqNr+PmtqCElhinEtpOE2HhggNENToXQ7TjvGGIZz1ryaYRhE81K8zfJvP+WP5C/XGa5VGvV7PiCMVaz+BwqsBOoIYYbU82K0W3ltzn05lAqvwpzIQsWoxuXbzoja2Lyp01v1on2FgUScPWwDhQnKSK4JPpK4ra7C52wSiyJVxJJ9Iw2om/HXY2fu9qCt2VyagRNPzfy278XwJ6Q0wnstrn5KpndBmNeid0ajFRPybAIj69svKpvM0VbC5lmBuITJrwyNUMTrmoukE096f3C0SRdYgpMVnq/1VaPYfc1ZPovfCqatWc0CqUgjzOALPdimNRBWzC3U7h3SryDYtCvH9Z9Qz0=
   skip_existing: true
   skip_cleanup: true
-  distributions: "sdist bdist_wheel"
+  distributions: sdist bdist_wheel
   on:
     tags: true
