@@ -12,6 +12,6 @@ matrix:
 before_install:
   - pip install poetry
 install:
-  - poetry install
+  - poetry install -v
   - pip install tox-travis
 script: tox
