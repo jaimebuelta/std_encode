@@ -4,5 +4,11 @@ python:
     - "3.5"
     - "3.6"
     - "3.7"
+matrix:
+  include:
+    # We need a newer Ubuntu than default for Python 3.7
+    - python: 3.7
+      dist: xenial
+      sudo: true
 install: pip install tox-travis
 script: tox
