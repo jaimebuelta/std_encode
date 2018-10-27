@@ -26,6 +26,13 @@ Some test
 text file
 ```
 
+## Install
+
+The package is available in [PyPI](https://pypi.org/project/std-encode/)
+
+    pip install std-encode
+
+
 ## Features
 
 - A log shows that a file has been decoded
