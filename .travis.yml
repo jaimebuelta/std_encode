@@ -10,11 +10,13 @@ matrix:
       dist: xenial
       sudo: true
 before_install:
-  - pip install poetry poetry-setup
+  - pip install poetry
 install:
   - poetry install -v
   - pip install tox-travis
-  - poetry-setup
+  - poetry build
+  # Extract the setup.py file
+  - tar -xf  dist/*.gz  */setup.py && mv */setup.py .
 script: tox
 deploy:
   provider: pypi
