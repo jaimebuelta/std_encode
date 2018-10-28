@@ -15,17 +15,18 @@ install:
 - pip install tox-travis
 script:
 - tox
+before_deploy:
+- poetry config http-basic.pypi $PYPI_USER $PYPI_PASSWORD
 - poetry build
-# Extract the setup.py file
-- tar -xf  dist/*.gz  && mv */setup.py .
 deploy:
-  provider: pypi
-  user: jaimebuelta
-  password:
-    secure: jNRvdQ9zgAfFZP2bZdHk5S+s6OKKxrNKh1z9bx0EK0xjZlnYUVkW+aCr18DbgjHVfM4T3hLKRsoYIMRwQrY82wjdkycSXPX4us55plto0tYAqiODcTN2ZO2xuKf6tbh/IK4gaU9LnKtf8l9AVq0G4dlsYLsZNlPFaJzc4NBWTmKt0Jp91JFcAC2oCO7ofmqee/+nx4gOkxxcld9KQwWQ2rWDbduo6qFxedl4PGEgUx9M9dnqyy55j2Hzpkuycaom2pw4DZ89dt4c+NILoGkiB5StUpO3m0Wk77ossBdeR7tOlhfgihMUD61CZ8EY7Y6osZWi12+iGeeaqdB4vqNr+PmtqCElhinEtpOE2HhggNENToXQ7TjvGGIZz1ryaYRhE81K8zfJvP+WP5C/XGa5VGvV7PiCMVaz+BwqsBOoIYYbU82K0W3ltzn05lAqvwpzIQsWoxuXbzoja2Lyp01v1on2FgUScPWwDhQnKSK4JPpK4ra7C52wSiyJVxJJ9Iw2om/HXY2fu9qCt2VyagRNPzfy278XwJ6Q0wnstrn5KpndBmNeid0ajFRPybAIj69svKpvM0VbC5lmBuITJrwyNUMTrmoukE096f3C0SRdYgpMVnq/1VaPYfc1ZPovfCqatWc0CqUgjzOALPdimNRBWzC3U7h3SryDYtCvH9Z9Qz0=
+  provider: script
+  script: poetry publish
   skip_existing: true
   skip_cleanup: true
-  distributions: sdist bdist_wheel
   on:
     tags: true
-    condition: $TRAVIS_PYTHON_VERSION == 3.7
+    condition: "$TRAVIS_PYTHON_VERSION == 3.7"
+env:
+  global:
+  - secure: rwPSx6UK5QElLpqO9waRRbIhpk3iuFdm+lzx2iS8+tjn3TZlEF6k/3zNWERKs2wAEO31dRsktkioRKtRXRxWcpXOGLP9HEOY7ABbgokLEVIYCYYdk8M1Kta2oNXqLOnJDkR5tu2k8AY7R6ZZQ/uUBk5coL8ikCA6hzYgZ8cm3AbxqsJfWfhCRaP3lwVmgH76+JwYELEaHtt4TKutQ+5B4u9mPL0uxpjrBowJla1Qvrr4wUk2G0eXHyJCPpHMhaOXAElG3LPfN//0hE0nN7VIctBCJWVZEEwE6mF0Ng8Wkti/My3G4LMwx3Gqy2alJHlYLtAkcdmF77TL/oUTTah5QbFY9psLRaNndnq/yUl6+y52kKWO88wlXIiN3gOo4aG1TNFczvyU9in+6L/emDaj8+KwvQGnv16YRqkmXfek/fz2sQUCw1sroOgYs880kvarGXWGpwqThYjC2BJUR0HEfni+7N2ahaor5VMDAMP0+OoSnLrwurlVKV6MROn73O4GwepLPC3GRy40k0OA5eKIDVrQTao5bOihCaXK8ESV/89zA6PpiEKZWFzPEJQEtqLNpBKoB06QKN/xv831bsW8JhPWV8/fOtuYkpdHJ8zBOQqWAhTaMF2jAnHSLlaPyrJ7ISDEDovMX7LCMHHj3wqr8VEqVpkw2sPTYn/eBgHOFKY=
+  - secure: IgNtxMqfN47NkE2JEc1UUaCNOER5rQnSksTv9VWS/gPCDTMsQi0nzLcxQOl3/EDNGtE+Ml3HW8naq2ADpbcEcmVG/OlDUi1p8i28rCM+fuZcghWyOHKmuiFKrfPpwskZjo1MjazYS2zzCkzA6Fu2kEpSFqox84X2WwIX0M/ftxMDR2+iDEEt20gY4TrHYaccwPVUZOJJ/HCW4uKIwBt10U4cx/ZyuJ9emXH7DcgfbqVnWp2FzZ6O0HrBnizV8IGl3FrZo3C/u9Vf4I5NNwPARA+fnBBPZtlQDfG889k41R5c0U8zsTQlziIgIcct/kjRsMIyh/hQklDojEw+E+6p4qm1niLJgE2P/TivGNkDfVj0hSbJ73YbtAHDRHBVIZlfGjcqEZuI5pPSzha6B7WD5yzxc2a9UqXGcywpLUvK2nLold906zF9YbP2mbT0dZxBfR5qJP+pimsWXwM6uEnduF2+kgj53TCACk1+HwF3dwL9c++4NP4HiHAMKWPAaAeZAJmVRkONWTtrKUYC5qEGgTRNLIrSFZNRjKxGHciqniA6xzGXl8o+kC1tpfDz8RQIz9HemxMLHaEtEea1869hAUXRits11XYiWzavYjFcedf64NLNQuO8GibN8sB2bl5tl4tFNrnm//5cGY2U0M3fO/uH+B155DXjJNssN6QUT5Y=
