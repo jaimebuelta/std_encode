@@ -1,5 +1,5 @@
 [[package]]
-category = "main"
+category = "dev"
 description = "Cross-platform colored terminal text."
 marker = "sys_platform == \"win32\""
 name = "colorama"
@@ -8,7 +8,7 @@ python-versions = "*"
 version = "0.3.9"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "A simple testing framework for command line applications"
 name = "cram"
 optional = false
@@ -16,7 +16,7 @@ python-versions = "*"
 version = "0.7"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "library with cross-python path, ini-parsing, io, code, log facilities"
 name = "py"
 optional = false
@@ -24,7 +24,7 @@ python-versions = "*"
 version = "1.4.34"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "pytest: simple powerful testing with Python"
 name = "pytest"
 optional = false
@@ -37,7 +37,7 @@ py = ">=1.4.33"
 setuptools = "*"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Run cram tests with pytest."
 name = "pytest-cram"
 optional = false
@@ -49,7 +49,7 @@ cram = ">=0.7"
 pytest = ">=2.8"
 
 [metadata]
-content-hash = "0e761b2d9fa982acb4f14ba3da59561bf35f66cb7e167213d58dbc5b56b4e947"
+content-hash = "a84f342001d402e342501a9b6436c2372cc53c16d823ff9927e37b53d4f9f7d0"
 python-versions = ">=2.7, !=3.0, !=3.1, !=3.2, !=3.3, !=3.4, <4"
 
 [metadata.hashes]
