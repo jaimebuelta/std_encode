@@ -3,6 +3,7 @@ import os
 import fileinput
 import argparse
 import base64
+import binascii
 
 START_ENCODING = '>>>>>>>>>> START'
 END_ENCODING = '<<<<<<<<<< END'
@@ -38,8 +39,8 @@ def run_sd():
             data = line.encode('ascii')
             try:
                 data = base64.standard_b64decode(data)
-            except TypeError:
-                data = data.strip('\n')
+            except binascii.Error:
+                data = data.decode('ascii').strip('\n')
                 msg = '#### Incorrect base64 data: [{}]'.format(data)
                 print(msg)
                 continue
