@@ -36,7 +36,14 @@ def run_sd():
             print(line, end='')
         elif not display and mode == 'b':
             data = line.encode('ascii')
-            data = base64.standard_b64decode(data)
+            try:
+                data = base64.standard_b64decode(data)
+            except TypeError:
+                data = data.strip('\n')
+                msg = '#### Incorrect base64 data: [{}]'.format(data)
+                print(msg)
+                continue
+
             fp.write(data)
         elif not display and mode == 't':
             fp.write(line)
