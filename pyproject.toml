@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "std_encode"
-version = "0.2.1"
+version = "0.2.2"
 description = "Encode and decode files through the standard input/output"
 homepage = "https://github.com/jaimebuelta/std_encode"
 repository = "https://github.com/jaimebuelta/std_encode"
