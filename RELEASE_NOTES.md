@@ -1,4 +1,4 @@
-Version 0.2.2 (2019/03/28)
+Version 0.2.3 (2019/03/28)
 ===
 Improve error handling
 
