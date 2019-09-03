@@ -114,3 +114,6 @@ dmypy.json
 .pyre/
 
 .DS_Store
+
+# wheel metadata
+pip-wheel-metadata/
